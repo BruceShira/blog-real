@@ -1,0 +1,2 @@
+class BlownBruce < ApplicationRecord
+end

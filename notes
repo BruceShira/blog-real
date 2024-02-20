@@ -1,0 +1,6 @@
+show.html.erb 
+
+first line & second lines respectively
+
+# if user_signed_in? && current_user.id == @blog_post.user_id
+# if user_signed_in? && current_user.id == @blog_post.user_id
