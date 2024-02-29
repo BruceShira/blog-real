@@ -27,3 +27,5 @@ Things you may want to cover:
 # blog
 # blog
 # blog
+# learning-path-blog
+# blog-real
