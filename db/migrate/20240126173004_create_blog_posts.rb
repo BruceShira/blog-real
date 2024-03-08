@@ -8,7 +8,6 @@ class CreateBlogPosts < ActiveRecord::Migration[7.1]
     end
   end
 end
-if migrations.any?
-  raise ActiveRecord::PendingMigrationError.new(pending_migrations: migrations)
-end
-end
+#if migrations.any?
+  #raise ActiveRecord::PendingMigrationError.new(pending_migrations: migrations)
+#end

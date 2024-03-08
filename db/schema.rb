@@ -10,15 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_15_213253) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_06_174542) do
   create_table "blog_post3s", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "blog_post_bads", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
@@ -32,14 +25,31 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_15_213253) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "blog_posts", force: :cascade do |t|
+  create_table "blog_post_ns", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "blown_bruces", force: :cascade do |t|
+  create_table "blog_posts", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "author_id"
+    t.datetime "published_at"
+    t.index ["author_id"], name: "index_blog_posts_on_author_id"
+  end
+
+  create_table "blop_post1s", force: :cascade do |t|
+    t.string "title"
+    t.text "ody"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "blop_posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
@@ -58,4 +68,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_15_213253) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "blog_posts", "users", column: "author_id"
 end
